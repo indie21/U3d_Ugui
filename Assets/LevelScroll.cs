@@ -10,6 +10,7 @@ public class LevelScroll : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 	private float targetHorizontalPosition;
 	public float smoothing =3;
 	private bool is_dragging =false;
+	public Toggle[] toggleArray;
 
 	// Use this for initialization
 	void Start () {
@@ -18,9 +19,7 @@ public class LevelScroll : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 
 	// Update is called once per frame
 	void Update () {
-
 		if (is_dragging == false) {
-
 			scrollRect.horizontalNormalizedPosition = Mathf.Lerp (scrollRect.horizontalNormalizedPosition,
 				targetHorizontalPosition,
 				Time.deltaTime * smoothing
@@ -46,8 +45,40 @@ public class LevelScroll : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 		}
 
 		print (pageArray [index]);
-		scrollRect.horizontalNormalizedPosition = pageArray[index];
+		targetHorizontalPosition = pageArray[index];
 		is_dragging = false;
+		toggleArray [index].isOn = true;
+	}
+
+	public void OnToggleValueChange1(bool isOn){
+		print (isOn+"1");
+		if (isOn) {
+			targetHorizontalPosition = pageArray [0];
+		}
+	}
+
+	public void OnToggleValueChange2(bool isOn){
+		print (isOn+"2");
+		if (isOn) {
+			targetHorizontalPosition = pageArray [1];
+		}
+	}
+	
+
+	public void OnToggleValueChange3(bool isOn){
+		print (isOn+"3");
+		if (isOn) {
+			targetHorizontalPosition  = pageArray [2];
+		}
+
+	}
+
+	public void OnToggleValueChange4(bool isOn){
+		print (isOn+"4");
+		if (isOn) {
+			targetHorizontalPosition  = pageArray [3];
+		}
+
 	}
 
 }
