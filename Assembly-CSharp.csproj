@@ -49,6 +49,7 @@
      <Compile Include="Assets\Chapter1\Player.cs" />
      <Compile Include="Assets\LevelScroll.cs" />
      <Compile Include="Assets\Skill.cs" />
+     <Compile Include="Assets\Togx.cs" />
  <Reference Include="UnityEngine.Networking">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/Networking/UnityEngine.Networking.dll</HintPath>
  </Reference>
